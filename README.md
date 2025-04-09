@@ -18,9 +18,9 @@ pip install -r requirements.txt
 ## Step 4: Start the server
 ```bash
 make run-dev
-
+```
 or
-
+```bash
 fastapi dev main.py --port 8000
 ```
 
