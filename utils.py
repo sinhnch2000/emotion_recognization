@@ -1,6 +1,7 @@
 from fastapi import HTTPException
 import os
 import urllib.request
+import gdown
 
 # Đường dẫn đến các file mô hình Caffe
 EMOTION_MODEL_PATH = "models/EmotionCNN_best.pth"
@@ -22,7 +23,7 @@ def download_caffe_models():
     # Tải file deploy.prototxt
     if not os.path.exists(EMOTION_MODEL_PATH):
         print(f"Downloading {EMOTION_MODEL_PATH}...")
-        urllib.request.urlretrieve(EMOTION_MODEL_URL, EMOTION_MODEL_PATH)
+        gdown.download(EMOTION_MODEL_URL, EMOTION_MODEL_PATH, quiet=False)
         print(f"Downloaded {EMOTION_MODEL_PATH}")
 
     # Tải file deploy.prototxt

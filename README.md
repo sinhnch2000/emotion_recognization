@@ -15,15 +15,7 @@ conda activate emotion
 pip install -r requirements.txt
 ```
 
-## Step 4: Set environment variables
-
-```bash
-cp .env.example .env
-```
-
-Update `.env` file with the correct values
-
-## Step 5: Start the server
+## Step 4: Start the server
 ```bash
 make run-dev
 ```
