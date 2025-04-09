@@ -1,0 +1,5 @@
+.qodo
+*/models/
+*/test/
+*/.gradio/
+*/__pycache__/
