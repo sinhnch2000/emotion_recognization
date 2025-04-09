@@ -6,6 +6,8 @@ Download and install Anaconda from the official website: <https://docs.anaconda.
 
 ```bash
 conda create --name emotion python=3.12.4
+```
+```bash
 conda activate emotion
 ```
 
