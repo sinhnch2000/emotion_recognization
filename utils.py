@@ -3,10 +3,12 @@ import os
 import urllib.request
 
 # Đường dẫn đến các file mô hình Caffe
+EMOTION_MODEL_PATH = "models/EmotionCNN_best.pth"
 CAFFE_PROTO_PATH = "models/deploy.prototxt"
 CAFFE_MODEL_PATH = "models/res10_300x300_ssd_iter_140000.caffemodel"
 
 # URL để tải file mô hình Caffe nếu chưa có
+EMOTION_MODEL_URL = "https://drive.google.com/uc?export=download&id=1tdt5UsMFXqG2CXfa752h6o3zqzIfwgP6"
 CAFFE_PROTO_URL = "https://raw.githubusercontent.com/opencv/opencv/master/samples/dnn/face_detector/deploy.prototxt"
 CAFFE_MODEL_URL = "https://github.com/opencv/opencv_3rdparty/raw/dnn_samples_face_detector_20170830/res10_300x300_ssd_iter_140000.caffemodel"
 
@@ -16,6 +18,12 @@ def download_caffe_models():
     """
     # Tạo thư mục models nếu chưa có
     os.makedirs("models", exist_ok=True)
+
+    # Tải file deploy.prototxt
+    if not os.path.exists(EMOTION_MODEL_PATH):
+        print(f"Downloading {EMOTION_MODEL_PATH}...")
+        urllib.request.urlretrieve(EMOTION_MODEL_URL, EMOTION_MODEL_PATH)
+        print(f"Downloaded {EMOTION_MODEL_PATH}")
 
     # Tải file deploy.prototxt
     if not os.path.exists(CAFFE_PROTO_PATH):
